@@ -41,6 +41,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     let score1 = 0;
     let score2 = 0;
     let score3 = 0;
+    let score4 = 0;
 
 
     // 1. % Real Followers Scoring
@@ -128,12 +129,41 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     }
 
 
+    // 4. % Followers US Scoring
+    if (isNaN(followersUS)) {
+        score4 = -1; // Assign score2 to -1 if avgEngIG is NaN
+    } else if (followersUS > 80) {
+        score4 = 10; 
+    } else if (followersUS > 70) {
+        score4 = 9;
+    } else if (followersUS > 60) {
+        score4 = 8; 
+    } else if (followersUS > 50) {
+        score4 = 7; 
+    } else if (followersUS > 40) {
+        score4 = 6; 
+    } else if (followersUS > 35) {
+        score4 = 5; 
+    } else if (followersUS > 30) {
+        score4 = 4; 
+    } else if (followersUS > 25) {
+        score4 = 3;
+    } else if (followersUS > 20) {
+        score4 = 2;
+    } else if (followersUS > 15) {
+        score4 = 1;
+    } else {
+        score4 = 0; 
+    }
+
+
     // Omit blank inputs
     let scores = [];
 
     if (score1 !== -1) scores.push(score1);
     if (score2 !== -1) scores.push(score2);
     if (score3 !== -1) scores.push(score3);
+    if (score4 !== -1) scores.push(score4);
 
 
     // Perform the calculation 
