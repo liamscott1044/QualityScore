@@ -41,7 +41,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     let score1 = 0;
 
 
-    // % Followers Age
+    // % Followers Age scoring
     let sum23 = followers2 + followers3;
     let sum1234 = followers1 + followers2 + followers3 + followers4; 
 
@@ -71,7 +71,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
 
 
     // Perform the calculation 
-    let totalScore = score 1 + score 2;
+    let totalScore = score1 + score 2;
     let maxScore = 10;  // This should match the total maximum possible score from your questions
     let scoreOutOf10 = (totalScore / maxScore) * 10;
     
