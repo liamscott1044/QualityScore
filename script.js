@@ -26,13 +26,13 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     let followers5 = parseInt(document.getElementById("question7").value);
     let followersUS = parseInt(document.getElementById("question8").value);
     let costEng = parseInt(document.getElementById("question9").value);
-    let avgLikesIG = parseInt(document.getElementById("question10").value);
-    let avgComIG = parseInt(document.getElementById("question11").value);
+    let avgLikesIG = parseInput(document.getElementById("question10").value); //text input
+    let avgComIG = parseInput(document.getElementById("question11").value); //text input
     let bmSaturation = parseInt(document.getElementById("question12").value);
     let bmEffective = parseInt(document.getElementById("question13").value);
     let avgEngTT = parseInt(document.getElementById("question14").value);
-    let avgViewsTT = parseInt(document.getElementById("question15").value);
-    let avgLikesTT = parseInt(document.getElementById("question16").value);
+    let avgViewsTT = parseInput(document.getElementById("question15").value); //text input
+    let avgLikesTT = parseInput(document.getElementById("question16").value); //text input
     let avgSharesTT = parseInt(document.getElementById("question17").value);
     let avgComTT = parseInt(document.getElementById("question18").value);
 
