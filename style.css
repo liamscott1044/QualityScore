@@ -73,4 +73,5 @@ input[type=number]::-webkit-outer-spin-button {
     height: auto; /* Maintains the aspect ratio */
     display: block; /* Ensures there is no space below the image */
     margin: 0 auto; /* Centers the image if it's smaller than the screen */
+    margin-bottom: 0; /* Remove any margin below the image */
 }
