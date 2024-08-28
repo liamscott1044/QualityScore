@@ -1,6 +1,21 @@
 document.getElementById("questionForm").addEventListener("submit", function(event) {
     event.preventDefault();
-    
+
+    // Function to parse input values with suffixes
+    function parseInput(value) {
+        if (typeof value === "string") {
+            value = value.trim(); // Remove whitespace
+            if (value.endsWith('k')) {
+                return parseFloat(value.slice(0, -1)) * 1000; // Convert "2.4k" to 2400
+            } else if (value.endsWith('m')) {
+                return parseFloat(value.slice(0, -1)) * 1000000; // Convert "2.4m" to 2400000
+            } else {
+                return parseFloat(value); // Regular numeric value
+            }
+        }
+        return value; // Return the value as is if not a string
+    }
+
     // Get the values from the form
     let question1 = parseInt(document.getElementById("question1").value);
     let question2 = parseInt(document.getElementById("question2").value);
