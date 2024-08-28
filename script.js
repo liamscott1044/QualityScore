@@ -27,5 +27,5 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     let scoreOutOf10 = (totalScore / maxScore) * 10;
     
     // Display the result
-    document.getElementById("result").innerText = `Your score is: ${scoreOutOf10.toFixed(1)} out of 10`;
+    document.getElementById("result").innerText = `Creator Quality Score: ${scoreOutOf10.toFixed(1)} out of 10`;
 });
