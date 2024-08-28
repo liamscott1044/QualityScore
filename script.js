@@ -75,6 +75,12 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     // 2. % Average Engagement Rate (IG) Scoring
     if (isNaN(avgEngIG)) {
         score2 = -1; // Assign score2 to -1 if avgEngIG is NaN
+    } else if (avgEngIG > 6) {
+        score2 = 13; 
+    } else if (avgEngIG > 5) {
+        score2 = 12; 
+    } else if (avgEngIG > 4) {
+        score2 = 11; 
     } else if (avgEngIG > 3) {
         score2 = 10; 
     } else if (avgEngIG > 2) {
