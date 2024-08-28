@@ -47,25 +47,25 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     // 1. % Real Followers Scoring
     if (isNaN(realFollowers)) {
         score1 = -1; // Set score1 to -1 if realFollowers is NaN
-    } else if (realFollowers >= 100) {
-        score1 = 10;
     } else if (realFollowers >= 95) {
-        score1 = 9;
+        score1 = 10;
     } else if (realFollowers >= 90) {
-        score1 = 8;
+        score1 = 9;
     } else if (realFollowers >= 85) {
-        score1 = 7;
+        score1 = 8;
     } else if (realFollowers >= 80) {
-        score1 = 6;
+        score1 = 7;
     } else if (realFollowers >= 75) {
-        score1 = 5;
+        score1 = 6;
     } else if (realFollowers >= 70) {
-        score1 = 4;
+        score1 = 5;
     } else if (realFollowers >= 65) {
-        score1 = 3;
+        score1 = 4;
     } else if (realFollowers >= 60) {
-        score1 = 2;
+        score1 = 3;
     } else if (realFollowers >= 55) {
+        score1 = 2;
+    } else if (realFollowers >= 50) {
         score1 = 1;
     } else {
         score1 = 0; // Set score1 to 0 for all other cases
