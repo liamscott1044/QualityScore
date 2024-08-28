@@ -1,5 +1,12 @@
+@font-face {
+    font-family: 'MaisonNeueExtended-Book';
+    src: url('https://github.com/liamscott1044/QualityScore/blob/main/fonts/MaisonNeueExtended-Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: MaisonNeueExtended-Book, sans-serif;
     margin: 20px;
     padding: 20px;
     max-width: 600px;
@@ -8,6 +15,7 @@ body {
 }
 
 h1 {
+    font-family: MaisonNeueExtended-Book, sans-serif;
     text-align: center;
 }
 
