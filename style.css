@@ -5,6 +5,10 @@
     font-style: normal;
 }
 
+header {
+    padding-top: 20px; /* Add padding above the header */
+}
+
 body {
     font-family: MaisonNeueExtended-Book, sans-serif;
     margin: 20px;
