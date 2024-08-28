@@ -37,41 +37,107 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     let avgComTT = parseInt(document.getElementById("question18").value);
 
 
-    // Define input variables
+    // Define scoring variables
     let score1 = 0;
+    let score2 = 0;
+    let score3 = 0;
 
 
-    // % Followers Age scoring
-    let sum23 = followers2 + followers3;
-    let sum1234 = followers1 + followers2 + followers3 + followers4; 
-
-    if (sum23 > 60 && sum1234 > 80) {
+    // 1. % Real Followers Scoring
+    if (isNaN(realFollowers)) {
+        score1 = -1; // Set score1 to -1 if realFollowers is NaN
+    } else if (realFollowers >= 100) {
         score1 = 10;
-    } else if (sum23 > 50 && sum1234 > 70) {
+    } else if (realFollowers >= 95) {
         score1 = 9;
-    } else if (sum23 > 40 && sum1234 > 60) {
+    } else if (realFollowers >= 90) {
         score1 = 8;
-    } else if (sum23 > 30 && sum1234 > 50) {
+    } else if (realFollowers >= 85) {
         score1 = 7;
-    } else if (sum23 > 20 && sum1234 > 40) {
+    } else if (realFollowers >= 80) {
         score1 = 6;
-    } else if (sum23 > 15 && sum1234 > 35) {
+    } else if (realFollowers >= 75) {
         score1 = 5;
-    } else if (sum23 > 10 && sum1234 > 30) {
+    } else if (realFollowers >= 70) {
         score1 = 4;
-    } else if (sum23 > 5 && sum1234 > 25) {
+    } else if (realFollowers >= 65) {
         score1 = 3;
-    } else if (sum23 > 0 && sum1234 > 20) {
+    } else if (realFollowers >= 60) {
         score1 = 2;
-    } else if (sum23 > 0 && sum1234 > 15) {
+    } else if (realFollowers >= 55) {
         score1 = 1;
     } else {
-        score1 = 0;
+        score1 = 0; // Set score1 to 0 for all other cases
+    }
+
+    // 2. % Average Engagement Rate (IG) Scoring
+    if (isNaN(avgEngIG)) {
+        score2 = -1; // Assign score2 to -1 if avgEngIG is NaN
+    } else if (avgEngIG > 3) {
+        score2 = 10; 
+    } else if (avgEngIG > 2) {
+        score2 = 9;
+    } else if (avgEngIG > 1) {
+        score2 = 8; 
+    } else if (avgEngIG > 0.8) {
+        score2 = 7; 
+    } else if (avgEngIG > 0.7) {
+        score2 = 6; 
+    } else if (avgEngIG > 0.6) {
+        score2 = 5; 
+    } else if (avgEngIG > 0.5) {
+        score2 = 4; 
+    } else if (avgEngIG > 0.3) {
+        score2 = 3;
+    } else if (avgEngIG > 0.2) {
+        score2 = 2;
+    } else if (avgEngIG > 0.1) {
+        score2 = 1;
+    } else {
+        score2 = 0; 
+    }
+
+    // 3. % Followers Age Scoring
+    let followersAgeSum23 = followers2 + followers3;
+    let followersAgeSum1234 = followers1 + followers2 + followers3 + followers4; 
+
+    if (isNaN(followersAgeSum23) || isNaN(followersAgeSum1234)) {
+        score3 = -1; // Set score3 to -1 if either sum is NaN
+    } else if (followersAgeSum23 > 60 && followersAgeSum1234 > 80) {
+        score3 = 10;
+    } else if (followersAgeSum23 > 50 && followersAgeSum1234 > 70) {
+        score3 = 9;
+    } else if (followersAgeSum23 > 40 && followersAgeSum1234 > 60) {
+        score3 = 8;
+    } else if (followersAgeSum23 > 30 && followersAgeSum1234 > 50) {
+        score3 = 7;
+    } else if (followersAgeSum23 > 20 && followersAgeSum1234 > 40) {
+        score3 = 6;
+    } else if (followersAgeSum23 > 15 && followersAgeSum1234 > 35) {
+        score3 = 5;
+    } else if (followersAgeSum23 > 10 && followersAgeSum1234 > 30) {
+        score3 = 4;
+    } else if (followersAgeSum23 > 5 && followersAgeSum1234 > 25) {
+        score3 = 3;
+    } else if (followersAgeSum23 > 0 && followersAgeSum1234 > 20) {
+        score3 = 2;
+    } else if (followersAgeSum23 > 0 && followersAgeSum1234 > 15) {
+        score3 = 1;
+    } else {
+        score3 = 0; // Set score3 to 0 for any other conditions
     }
 
 
+    // Omit blank inputs
+    let scores = [];
+
+    if (score1 !== -1) scores.push(score1);
+    if (score2 !== -1) scores.push(score2);
+    if (score3 !== -1) scores.push(score3);
+
+
     // Perform the calculation 
-    let totalScore = score1;
+    let totalScore = scores.reduce((sum, score) => sum + score, 0) / scores.length;
     let maxScore = 10;  // This should match the total maximum possible score from your questions
     let scoreOutOf10 = (totalScore / maxScore) * 10;
     
