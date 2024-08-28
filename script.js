@@ -42,6 +42,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     let score2 = 0;
     let score3 = 0;
     let score4 = 0;
+    let score5 = 0;
 
 
     // 1. % Real Followers Scoring
@@ -157,6 +158,34 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     }
 
 
+    // 5. $ Cost per Engagement (IG) Scoring
+    if (isNaN(costEng)) {
+        score5 = -1; // Assign score2 to -1 if avgEngIG is NaN
+    } else if (costEng < 1) {
+        score5 = 10; 
+    } else if (costEng < 2) {
+        score5 = 9;
+    } else if (costEng < 3) {
+        score5 = 8; 
+    } else if (costEng < 4) {
+        score5 = 7; 
+    } else if (costEng < 5) {
+        score5 = 6; 
+    } else if (costEng < 6) {
+        score5 = 5; 
+    } else if (costEng < 7) {
+        score5 = 4; 
+    } else if (costEng < 8) {
+        score5 = 3;
+    } else if (costEng < 9) {
+        score5 = 2;
+    } else if (costEng < 10) {
+        score5 = 1;
+    } else {
+        score5 = 0; 
+    }
+
+
     // Omit blank inputs
     let scores = [];
 
@@ -164,6 +193,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     if (score2 !== -1) scores.push(score2);
     if (score3 !== -1) scores.push(score3);
     if (score4 !== -1) scores.push(score4);
+    if (score5 !== -1) scores.push(score5);
 
 
     // Perform the calculation 
