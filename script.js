@@ -71,7 +71,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
 
 
     // Perform the calculation 
-    let totalScore = score1 + score 2;
+    let totalScore = score1;
     let maxScore = 10;  // This should match the total maximum possible score from your questions
     let scoreOutOf10 = (totalScore / maxScore) * 10;
     
