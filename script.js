@@ -45,25 +45,25 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     let sum23 = followers2 + followers3;
     let sum1234 = followers1 + followers2 + followers3 + followers4; 
 
-    if (sum23 > 50 && sum1234 > 80) {
+    if (sum23 > 60 && sum1234 > 80) {
         score1 = 10;
-    } else if (sum23 > 40 && sum1234 > 70) {
+    } else if (sum23 > 50 && sum1234 > 70) {
         score1 = 9;
-    } else if (sum23 > 30 && sum1234 > 60) {
+    } else if (sum23 > 40 && sum1234 > 60) {
         score1 = 8;
-    } else if (sum23 > 20 && sum1234 > 50) {
+    } else if (sum23 > 30 && sum1234 > 50) {
         score1 = 7;
-    } else if (sum23 > 15 && sum1234 > 40) {
+    } else if (sum23 > 20 && sum1234 > 40) {
         score1 = 6;
-    } else if (sum23 > 10 && sum1234 > 30) {
+    } else if (sum23 > 15 && sum1234 > 35) {
         score1 = 5;
-    } else if (sum23 > 5 && sum1234 > 20) {
+    } else if (sum23 > 10 && sum1234 > 30) {
         score1 = 4;
-    } else if (sum23 > 2 && sum1234 > 10) {
+    } else if (sum23 > 5 && sum1234 > 25) {
         score1 = 3;
-    } else if (sum23 > 0 && sum1234 > 5) {
+    } else if (sum23 > 0 && sum1234 > 20) {
         score1 = 2;
-    } else if (sum23 > 0 && sum1234 > 0) {
+    } else if (sum23 > 0 && sum1234 > 15) {
         score1 = 1;
     } else {
         score1 = 0;
