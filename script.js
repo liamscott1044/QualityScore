@@ -45,6 +45,8 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     let score5 = 0;
     let score6 = 0;
     let score7 = 0;
+    let score8 = 0;
+    let score9 = 0;
 
 
     // 1. % Real Followers Scoring
@@ -255,6 +257,65 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     }
 
 
+    // 8. % Brand Mention Saturation Rate Scoring
+    if (isNaN(bmSaturation)) {
+        score8 = -1; // Assign score8 to -1 if bmSaturation is NaN
+    } else if (bmSaturation < 10) {
+        score8 = 10; 
+    } else if (bmSaturation < 20) {
+        score8 = 9;
+    } else if (bmSaturation < 30) {
+        score8 = 8; 
+    } else if (bmSaturation < 40) {
+        score8 = 7; 
+    } else if (bmSaturation < 50) {
+        score8 = 6; 
+    } else if (bmSaturation < 60) {
+        score8 = 5; 
+    } else if (bmSaturation < 70) {
+        score8 = 4; 
+    } else if (bmSaturation < 80) {
+        score8 = 3;
+    } else if (bmSaturation < 90) {
+        score8 = 2;
+    } else if (bmSaturation < 100) {
+        score8 = 1;
+    } else {
+        score8 = 0; 
+    }
+
+    // 9. % Brand Mention Post Effectiveness Scoring
+    if (isNaN(bmEffective)) {
+        score9 = -1; // Assign score9 to -1 if bmEffective is NaN
+    } else if (bmEffective > 110) {
+        score9 = 12;
+    } else if (bmEffective > 100) {
+        score9 = 11;
+    } else if (bmEffective > 90) {
+        score9 = 10; 
+    } else if (bmEffective > 80) {
+        score9 = 9;
+    } else if (bmEffective > 70) {
+        score9 = 8; 
+    } else if (bmEffective > 60) {
+        score9 = 7; 
+    } else if (bmEffective > 50) {
+        score9 = 6; 
+    } else if (bmEffective > 40) {
+        score9 = 5; 
+    } else if (bmEffective > 30) {
+        score9 = 4; 
+    } else if (bmEffective > 20) {
+        score9 = 3;
+    } else if (bmEffective > 10) {
+        score9 = 2;
+    } else if (bmEffective > 5) {
+        score9 = 1;
+    } else {
+        score9 = 0; 
+    }
+
+
     // Omit blank inputs
     let scores = [];
 
@@ -265,6 +326,8 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     if (score5 !== -1) scores.push(score5);
     if (score6 !== -1) scores.push(score6);
     if (score7 !== -1) scores.push(score7);
+    if (score8 !== -1) scores.push(score8);
+    if (score9 !== -1) scores.push(score9);
 
 
     // Perform the calculation 
