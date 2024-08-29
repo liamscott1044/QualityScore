@@ -50,6 +50,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     let score10 = 0;
     let score11 = 0;
     let score12 = 0;
+    let score13 = 0;
 
 
     // 1. % Real Followers Scoring
@@ -421,6 +422,40 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     }
 
 
+    // 13. # Average Comments (TT) Scoring
+    if (isNaN(avgComTT)) {
+        score13 = -1; // Assign score13 to -1 if avgComTT is NaN
+    } else if (avgComTT > 100) {
+        score13 = 13; 
+    } else if (avgComTT > 50) {
+        score13 = 12; 
+    } else if (avgComTT > 30) {
+        score13 = 11; 
+    } else if (avgComTT > 20) {
+        score13 = 10; 
+    } else if (avgComTT > 10) {
+        score13 = 9;
+    } else if (avgComTT > 5) {
+        score13 = 8; 
+    } else if (avgComTT > 4) {
+        score13 = 7; 
+    } else if (avgComTT > 3) {
+        score13 = 6; 
+    } else if (avgComTT > 2) {
+        score13 = 5; 
+    } else if (avgComTT > 1) {
+        score13 = 4; 
+    } else if (avgComTT > 0.5) {
+        score13 = 3;
+    } else if (avgComTT > 0.2) {
+        score13 = 2;
+    } else if (avgComTT > 0.01) {
+        score13 = 1;
+    } else {
+        score13 = 0; 
+    }
+
+
     // Omit blank inputs
     let scores = [];
 
@@ -436,6 +471,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     if (score10 !== -1) scores.push(score10);
     if (score11 !== -1) scores.push(score11);
     if (score12 !== -1) scores.push(score12);
+    if (score13 !== -1) scores.push(score13);
 
 
     // Perform the calculation 
