@@ -49,6 +49,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     let score9 = 0;
     let score10 = 0;
     let score11 = 0;
+    let score12 = 0;
 
 
     // 1. % Real Followers Scoring
@@ -386,6 +387,40 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     }
 
 
+    // 12. # Average Shares (TT) Scoring
+    if (isNaN(avgSharesTT)) {
+        score12 = -1; // Assign score12 to -1 if avgSharesTT is NaN
+    } else if (avgSharesTT > 2000) {
+        score12 = 13; 
+    } else if (avgSharesTT > 1000) {
+        score12 = 12; 
+    } else if (avgSharesTT > 500) {
+        score12 = 11; 
+    } else if (avgSharesTT > 400) {
+        score12 = 10; 
+    } else if (avgSharesTT > 300) {
+        score12 = 9;
+    } else if (avgSharesTT > 200) {
+        score12 = 8; 
+    } else if (avgSharesTT > 100) {
+        score12 = 7; 
+    } else if (avgSharesTT > 50) {
+        score12 = 6; 
+    } else if (avgSharesTT > 10) {
+        score12 = 5; 
+    } else if (avgSharesTT > 5) {
+        score12 = 4; 
+    } else if (avgSharesTT > 3) {
+        score12 = 3;
+    } else if (avgSharesTT > 2) {
+        score12 = 2;
+    } else if (avgSharesTT > 1) {
+        score12 = 1;
+    } else {
+        score12 = 0; 
+    }
+
+
     // Omit blank inputs
     let scores = [];
 
@@ -400,6 +435,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     if (score9 !== -1) scores.push(score9);
     if (score10 !== -1) scores.push(score10);
     if (score11 !== -1) scores.push(score11);
+    if (score12 !== -1) scores.push(score12);
 
 
     // Perform the calculation 
@@ -408,5 +444,5 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     let scoreOutOf10 = (totalScore / maxScore) * 10;
     
     // Display the result
-    document.getElementById("result").innerText = `MRKT Creator Quality Score: ${scoreOutOf10.toFixed(1)} out of 10`;
+    document.getElementById("result").innerText = `Creator Quality Score: ${scoreOutOf10.toFixed(1)} out of 10`;
 });
