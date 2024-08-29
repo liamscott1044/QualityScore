@@ -44,6 +44,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     let score4 = 0;
     let score5 = 0;
     let score6 = 0;
+    let score7 = 0;
 
 
     // 1. % Real Followers Scoring
@@ -139,7 +140,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
 
     // 4. % Followers US Scoring
     if (isNaN(followersUS)) {
-        score4 = -1; // Assign score2 to -1 if avgEngIG is NaN
+        score4 = -1; // Assign score4 to -1 if avgEngIG is NaN
     } else if (followersUS > 80) {
         score4 = 10; 
     } else if (followersUS > 70) {
@@ -167,7 +168,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
 
     // 5. $ Cost per Engagement (IG) Scoring
     if (isNaN(costEng)) {
-        score5 = -1; // Assign score2 to -1 if costEng is NaN
+        score5 = -1; // Assign score5 to -1 if costEng is NaN
     } else if (costEng < 1) {
         score5 = 10; 
     } else if (costEng < 2) {
@@ -194,7 +195,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
 
     // 6. # Average Likes (IG) Scoring
     if (isNaN(avgLikesIG)) {
-        score6 = -1; // Assign score2 to -1 if avgEngIG is NaN
+        score6 = -1; // Assign score6 to -1 if avgEngIG is NaN
     } else if (avgLikesIG > 5000) {
         score6 = 13; 
     } else if (avgLikesIG > 2500) {
@@ -225,6 +226,35 @@ document.getElementById("questionForm").addEventListener("submit", function(even
         score6 = 0; 
     }
 
+
+    // 7. # Average Comments (IG) Scoring
+    if (isNaN(avgComIG)) {
+        score7 = -1; // Assign score7 to -1 if avgEngIG is NaN
+    } else if (avgComIG > 200) {
+        score7 = 10; 
+    } else if (avgComIG > 100) {
+        score7 = 9;
+    } else if (avgComIG > 50) {
+        score7 = 8; 
+    } else if (avgComIG > 30) {
+        score7 = 7; 
+    } else if (avgComIG > 20) {
+        score7 = 6; 
+    } else if (avgComIG > 10) {
+        score7 = 5; 
+    } else if (avgComIG > 6) {
+        score7 = 4; 
+    } else if (avgComIG > 4) {
+        score7 = 3;
+    } else if (avgComIG > 3) {
+        score7 = 2;
+    } else if (avgComIG > 1) {
+        score7 = 1;
+    } else {
+        score7 = 0; 
+    }
+
+
     // Omit blank inputs
     let scores = [];
 
@@ -234,6 +264,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     if (score4 !== -1) scores.push(score4);
     if (score5 !== -1) scores.push(score5);
     if (score6 !== -1) scores.push(score6);
+    if (score7 !== -1) scores.push(score7);
 
 
     // Perform the calculation 
