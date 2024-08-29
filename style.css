@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'MaisonNeueExtended-Book';
-    src: url('https://github.com/liamscott1044/QualityScore/blob/main/fonts/MaisonNeueExtended-Book.otf') format('opentype');
+    src: url('https://github.com/liamscott1044/QualityScore/blob/main/fonts/MaisonNeueExtended-Book.otf') format('opentype'),
+         url('https://github.com/liamscott1044/QualityScore/blob/main/fonts/MaisonNeueExtended-Book.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
